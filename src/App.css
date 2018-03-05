@@ -1,0 +1,260 @@
+.App {
+  text-align: center;
+}
+*:focus {
+	outline:none;
+}
+* {
+	margin-top:0;
+}
+
+body {
+	font-size:16px;
+	font-family: 'Lobster', cursive;
+	color:#06739c;
+}
+
+#root {
+	width:100%;
+	min-height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background:url('http://www.seantwiddy.com/wp-content/uploads/2010/10/Twiddycloud_pattern1.jpg');
+	text-align:center;
+}
+
+.formSettings label {
+	margin-right:10px;
+}
+
+.app {
+	background:rgba(255,255,255,0.9);
+	max-width:650px;
+	margin:0 auto;
+	padding:16px 0 1px;
+	border:1px solid  #56afe1;
+	border-top:none;
+	position:relative;
+}
+#weatherForm {
+	margin:0 auto 15px;
+	text-align:center;
+	padding:0 10px;
+	position:relative;
+	z-index:1;
+}
+.weather-details {
+	overflow:hidden;
+	opacity:1;
+	border-collapse: collapse;
+	box-sizing:border-box;
+	width:100%;
+	margin:0 auto 15px;
+	vertical-align:middle;
+	color:black;
+}
+.weather-details .city, th {
+	font-family:'Arial';
+}
+.weather-details tr:nth-child(2n) {
+	background:rgba(86,175,225,0.3);
+}
+.selectCity {
+	display:block;
+	width:100%;
+	margin:0 auto 15px;
+	font-size:1.2em;
+	padding:5px 10px;
+}
+.leftSide, .rightSide {
+	display:block;
+	max-width:49%;
+	box-sizing:border-box;
+	margin:0 auto 15px;
+}
+.leftSide {
+	float:left;
+	text-align:left;
+}
+.rightSide {
+	float:right;
+	text-align:right;
+}
+td,th {
+	padding:8px 5px;
+}
+.c {
+	clear:both;
+}
+.block {
+	display:block;
+	margin:0 auto 15px;
+}
+.inline-block {
+	display:inline-block;
+	margin:0 auto 15px;
+}
+.latField input, .lonField input {
+	max-width:100px;
+	text-align:center;
+}
+
+.zoomIn td, .zoomIn th, .header {
+  animation: zoomIn linear 0.5s;
+}
+
+.pulse {
+  animation: 4s pulse linear infinite;
+}
+input, textarea, select {
+	padding:5px 10px;
+}
+
+input, textarea, select  {
+	background:rgba(255,255,255,0.8);
+	border:none;
+	border-bottom:2px solid #56afe1;
+	transition:all linear 0.5s;
+	box-sizing:border-box;
+	font-size:1em;
+}
+
+button {
+	background: -moz-linear-gradient(-45deg,  rgba(86,175,225,1) 0%, rgba(86,175,225,1) 63%, rgba(249,249,249,0.56) 70%, rgba(225,243,249,0.5) 71%, rgba(86,175,225,1) 79%, rgba(86,175,225,1) 100%);
+	background: -webkit-linear-gradient(-45deg,  rgba(86,175,225,1) 0%,rgba(86,175,225,1) 63%,rgba(249,249,249,0.56) 70%,rgba(225,243,249,0.5) 71%,rgba(86,175,225,1) 79%,rgba(86,175,225,1) 100%);
+	background: linear-gradient(135deg,  rgba(86,175,225,1) 0%,rgba(86,175,225,1) 63%,rgba(249,249,249,0.56) 70%,rgba(225,243,249,0.5) 71%,rgba(86,175,225,1) 79%,rgba(86,175,225,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#56afe1', endColorstr='#56afe1',GradientType=1 );
+	cursor:pointer;
+	background-size: 200% 100%, auto;
+	background-position: -200% 0, 0 0;
+	transition: .5s linear;
+	border:3px double white;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	padding:10px;
+	font-size:1em;
+	color:white;
+	text-shadow:0 0 4px black;
+	font-family:'Lobster';
+}
+button:hover {
+	background-position: -400% 0, 0 0;
+	text-shadow:none;
+	color:black;
+}
+
+input:focus, textarea:focus, select:focus {
+	background:rgba(86,175,225,0.3);
+	border-color:white;
+}
+
+textarea {
+	resize:none;
+	width:100%;
+	box-sizing:border-box;
+	min-width:250px;
+}
+
+#weatherBody {
+	transition:0.5s linear;
+	opacity:0;
+	width:100%;
+	overflow:hidden;
+	height:0;
+	margin:0;
+	padding:0;
+}
+#weatherBody.show {
+	opacity:1;
+	height:auto;
+}
+#weatherBody.hide {
+	opacity:0;
+	height:auto;
+}
+
+/* Анимации */
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.5, 1.5, 1.5);
+    transform: scale3d(1.5, 1.5, 1.5);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Адаптивность */
+@media only screen and (max-width:590px) {
+	.coordLabel, .coord {
+		display:none;
+	}
+}
+
+@media only screen and (max-width:490px) {
+	.windLabel, .wind {
+		display:none;
+	}
+}
+@media only screen and (max-width:400px) {
+	.countryLabel, .country {
+		display:none;
+	}
+}
+
+@media only screen and (max-width:480px) {
+	body{font-size:14px;}
+	#weatherForm  {
+		padding:0;
+	}
+	.leftSide, .rightSide {
+		float:none;
+		max-width:100%;
+		text-align:center;
+	}
+	.latField, .lonField {
+		display:inline-block;
+		margin:0 5px 15px;
+	}
+}
